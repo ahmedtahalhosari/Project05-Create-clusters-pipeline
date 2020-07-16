@@ -15,10 +15,10 @@ pipeline {
 						--nodes-min 1 \
 						--nodes-max 3 \
 						--node-ami auto \
-						--region us-east-1 \
-						--zones us-east-1a \
-						--zones us-east-1b \
-						--zones us-east-1c \
+						--region us-west-1 \
+						--zones us-west-1a \
+						--zones us-west-1b \
+						--zones us-west-1c \
 					'''
 				}
 			}
