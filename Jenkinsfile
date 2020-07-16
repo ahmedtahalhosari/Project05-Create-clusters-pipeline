@@ -4,7 +4,7 @@ pipeline {
 
 		stage('Create kubernetes cluster') {
 			steps {
-				withAWS(region:'us-west-1', credentials: 'project05-udacity') {
+				withAWS(region:'us-east-2', credentials: 'project005-udacity') {
 					sh '''
 						eksctl create cluster \
 						--name capstonecluster \
@@ -15,10 +15,10 @@ pipeline {
 						--nodes-min 1 \
 						--nodes-max 3 \
 						--node-ami auto \
-						--region us-west-1 \
-						--zones us-west-1a \
-						--zones us-west-1b \
-						--zones us-west-1c \
+						--region us-east-2 \
+						--zones us-east-2a \
+						--zones us-east-2b \
+						--zones us-east-2c \
 					'''
 				}
 			}
@@ -28,9 +28,9 @@ pipeline {
 
 		stage('Create conf file cluster') {
 			steps {
-				withAWS(region:'us-west-1', credentials: 'project05-udacity') {
+				withAWS(region:'us-east-2', credentials: 'project005-udacity') {
 					sh '''
-						aws eks --region us-west-1 update-kubeconfig --name capstonecluster
+						aws eks --region us-east-2 update-kubeconfig --name capstonecluster
 					'''
 				}
 			}
